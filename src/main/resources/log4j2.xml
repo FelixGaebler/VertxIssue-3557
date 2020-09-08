@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" strict="true">
+    <Appenders>
+        <Appender type="Console" name="terminal">
+            <Layout type="PatternLayout" pattern="[%level]: %msg%n"/>
+            <Filters>
+                <Filter type="ThresholdFilter" level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+                <Filter type="MarkerFilter" marker="LOG_ONLY" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+        </Appender>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="terminal"/>
+        </Root>
+    </Loggers>
+</Configuration>

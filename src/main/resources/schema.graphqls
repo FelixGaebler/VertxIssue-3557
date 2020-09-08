@@ -1,0 +1,41 @@
+type Layout {
+    line0: String!
+    line1: String!
+    line2: String!
+    line3: String!
+}
+
+input LayoutInput {
+    line0: String!
+    line1: String!
+    line2: String!
+    line3: String!
+}
+
+type Sign {
+    name: String!
+    frames: [Layout]!
+}
+
+input SignInput {
+    name: String!
+    frames: [LayoutInput]!
+}
+
+type Query {
+    signs: [Sign]
+}
+
+type Mutation {
+    createSign(input: SignInput!) : Sign
+}
+
+type Subscription {
+    subscribeSigns: Sign
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
